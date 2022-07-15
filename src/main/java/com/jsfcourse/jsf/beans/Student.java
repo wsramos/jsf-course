@@ -11,11 +11,14 @@ public class Student {
 	private String firstName;
 	private String lastName;
 	private String country;
+	private String favoriteProgrammingLanguage;
 	
 	List<String> countryOptions;
+	List<String> programmingLanguageOptions;
 	
 	public Student() {
 		countryOptions = new ArrayList<>();
+		programmingLanguageOptions = new ArrayList<>();
 		
 		countryOptions.add("Brazil");
 		countryOptions.add("France");
@@ -24,6 +27,11 @@ public class Student {
 		countryOptions.add("Turkey");
 		countryOptions.add("United Kingdom");
 		countryOptions.add("United States");
+		
+		programmingLanguageOptions.add("Java");
+		programmingLanguageOptions.add("PHP");
+		programmingLanguageOptions.add("C#");
+		programmingLanguageOptions.add("Ruby");
 	}
 
 	public String getFirstName() {
@@ -50,7 +58,19 @@ public class Student {
 		this.country = country;
 	}
 	
+	public String getFavoriteProgrammingLanguage() {
+		return this.favoriteProgrammingLanguage;
+	}
+	
+	public void setFavoriteProgrammingLanguage(String favoriteProgrammingLanguage) {
+		this.favoriteProgrammingLanguage = favoriteProgrammingLanguage;
+	}
+	
 	public List<String> getCountryOptions(){
 		return this.countryOptions;
+	}
+	
+	public List<String> getProgrammingLanguageOptions(){
+		return this.programmingLanguageOptions;
 	}
 }

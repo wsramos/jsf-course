@@ -7,17 +7,23 @@
     <h:head>
         <title>Student - Input Form</title>
     </h:head>
-    
+    FORM STUDENT
+    <br/><br/>
     <h:body>
 		<h:form>
-			FIRST NAME: <h:inputText id="firstName" value="#{student.firstName}"/>
-			<br/><br/>
-			LAST NAME: <h:inputText id="lastName" value="#{student.lastName}"/>
-			<br/><br/>
-			COUNTRY: <h:selectOneMenu value="#{student.country}">
+			First Name: <h:inputText id="firstName" value="#{student.firstName}"/>
+			<br/>
+			Last Name: <h:inputText id="lastName" value="#{student.lastName}"/>
+			<br/>
+			Country: <h:selectOneMenu value="#{student.country}">
 				<f:selectItems value="#{student.countryOptions}"/>
 			</h:selectOneMenu>
 			<br/><br/>
+			Favorite Programming Language:
+			<h:selectOneRadio value="#{student.favoriteProgrammingLanguage}"> 
+				<f:selectItems value="#{student.programmingLanguageOptions}"/>
+			</h:selectOneRadio>
+			<br/>
 			<h:commandButton value="Submit" action="student_confirmation" />
 		</h:form>
     </h:body>
