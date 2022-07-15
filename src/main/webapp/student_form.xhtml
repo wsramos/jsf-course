@@ -15,13 +15,7 @@
 			LAST NAME: <h:inputText id="lastName" value="#{student.lastName}"/>
 			<br/><br/>
 			COUNTRY: <h:selectOneMenu value="#{student.country}">
-				<f:selectItem itemValue="Brazil" itemLabel="Brazil"/>
-				<f:selectItem itemValue="France" itemLabel="France"/>
-				<f:selectItem itemValue="Germany" itemLabel="Germany"/>
-				<f:selectItem itemValue="India" itemLabel="India"/>
-				<f:selectItem itemValue="Turkey" itemLabel="Turkey"/>
-				<f:selectItem itemValue="United Kingdom" itemLabel="United Kingdom"/>
-				<f:selectItem itemValue="United States" itemLabel="United States"/>
+				<f:selectItems value="#{student.countryOptions}"/>
 			</h:selectOneMenu>
 			<br/><br/>
 			<h:commandButton value="Submit" action="student_confirmation" />
