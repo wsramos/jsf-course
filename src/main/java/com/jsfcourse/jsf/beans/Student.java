@@ -12,9 +12,11 @@ public class Student {
 	private String lastName;
 	private String country;
 	private String favoriteProgrammingLanguage;
+	//private String otherProgrammingLanguages;
 	
 	List<String> countryOptions;
 	List<String> programmingLanguageOptions;
+	List<String> otherProgrammingLanguages;
 	
 	public Student() {
 		countryOptions = new ArrayList<>();
@@ -66,6 +68,16 @@ public class Student {
 		this.favoriteProgrammingLanguage = favoriteProgrammingLanguage;
 	}
 	
+	
+	public List<String> getOtherProgrammingLanguages() {
+		return this.otherProgrammingLanguages;
+	}
+
+	public void setOtherProgrammingLanguages(List<String> otherProgrammingLanguages) {
+		this.otherProgrammingLanguages = otherProgrammingLanguages;
+	}
+	
+
 	public List<String> getCountryOptions(){
 		return this.countryOptions;
 	}

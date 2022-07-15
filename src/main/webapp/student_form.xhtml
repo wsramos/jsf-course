@@ -7,22 +7,28 @@
     <h:head>
         <title>Student - Input Form</title>
     </h:head>
+    
+    <h:body>
     FORM STUDENT
     <br/><br/>
-    <h:body>
 		<h:form>
 			First Name: <h:inputText id="firstName" value="#{student.firstName}"/>
-			<br/>
+			<br/><br/>
 			Last Name: <h:inputText id="lastName" value="#{student.lastName}"/>
-			<br/>
+			<br/><br/>
 			Country: <h:selectOneMenu value="#{student.country}">
 				<f:selectItems value="#{student.countryOptions}"/>
 			</h:selectOneMenu>
 			<br/><br/>
-			Favorite Programming Language:
+			Your Favorite Programming Language:
 			<h:selectOneRadio value="#{student.favoriteProgrammingLanguage}"> 
 				<f:selectItems value="#{student.programmingLanguageOptions}"/>
 			</h:selectOneRadio>
+			<br/>
+			Other Programming Languages you Know:
+			<h:selectManyCheckbox value="#{student.otherProgrammingLanguages}"> 
+				<f:selectItems value="#{student.programmingLanguageOptions}"/>
+			</h:selectManyCheckbox>
 			<br/>
 			<h:commandButton value="Submit" action="student_confirmation" />
 		</h:form>

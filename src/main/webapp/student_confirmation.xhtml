@@ -1,5 +1,7 @@
 <!DOCTYPE HTML>
-<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     
     <h:head>
         <title>Student - Output Form</title>
@@ -13,6 +15,14 @@
 		País: #{student.country}
 		<br/>
 		Linguagem Favorita: #{student.favoriteProgrammingLanguage}
+		<br/>
+		<br/>
+		Outras Linguages Conhecidas:
+		<ul>
+			<ui:repeat value="#{student.otherProgrammingLanguages}" var="tempLanguage">
+				<li> #{tempLanguage}</li>
+			</ui:repeat>
+		</ul>
 		<br/>
     </h:body>
 </html>
