@@ -3,7 +3,11 @@ package com.jsfcourse.jsf.beans;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.ValidatorException;
 
 @ManagedBean
 public class Student {
@@ -15,6 +19,8 @@ public class Student {
 	private String email;
 	private Long freePasses;
 	private Long postalCode;
+	private String phoneNumber;
+	private String courseCode;
 	//private String otherProgrammingLanguages;
 	
 	List<String> countryOptions;
@@ -95,6 +101,22 @@ public class Student {
 		this.postalCode = postalCode;
 	}
 
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}	
+
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
+
 	public List<String> getOtherProgrammingLanguages() {
 		return this.otherProgrammingLanguages;
 	}
@@ -111,4 +133,20 @@ public class Student {
 	public List<String> getProgrammingLanguageOptions(){
 		return this.programmingLanguageOptions;
 	}
+	
+	public void validateTheCourseCode(FacesContext faces, UIComponent component, Object value) throws ValidatorException{
+		
+		if(value == null) {
+			return;
+		}
+		
+		String data = value.toString();
+		
+		if(!data.startsWith("JSF")) {
+			FacesMessage message = new FacesMessage("Course Code must start with JSF.");
+			
+			throw new ValidatorException(message);
+		}
+		
+	}	
 }

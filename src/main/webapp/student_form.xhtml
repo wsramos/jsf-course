@@ -37,6 +37,22 @@
 								 </h:inputText>
 			<h:messages for="email" styleClass="error"/>
 			<br/><br/>
+			Course Code: <h:inputText id="courseCode" 
+									 value="#{student.courseCode}" 
+									 label="courseCode" 
+									 validator="#{student.validateTheCourseCode}"
+									 required="true"
+									 requiredMessage="The Course Code is mandatory."/>
+			<h:messages for="courseCode" styleClass="error"/>
+			<br/><br/>
+			Phone number: <h:inputText id="phoneNumber" 
+								 value="#{student.phoneNumber}" 
+								 label="Phone Number" 
+								 validatorMessage="Phone number must follow (XX) XXXXX-XXXX">
+							<f:validateRegex pattern="^\([1-9]{2}\) (?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$"/>
+						 </h:inputText>
+			<h:messages for="phoneNumber" styleClass="error"/>
+			<br/><br/>
 			Free Passes: <h:inputText id="freePasses" 
 								 value="#{student.freePasses}" 
 								 label="Free Passes" 
@@ -51,8 +67,7 @@
 			<br/><br/>
 			Postal Code: <h:inputText id="postalCode" 
 								 value="#{student.postalCode}" 
-								 label="Postal Code" 
-								 >
+								 label="Postal Code">
 							<f:validateLength minimum="5" maximum="8"/>
 						 </h:inputText>
 			<h:messages for="postalCode" styleClass="error"/>
