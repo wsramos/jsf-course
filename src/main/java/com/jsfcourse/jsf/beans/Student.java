@@ -13,6 +13,8 @@ public class Student {
 	private String country;
 	private String favoriteProgrammingLanguage;
 	private String email;
+	private Long freePasses;
+	private Long postalCode;
 	//private String otherProgrammingLanguages;
 	
 	List<String> countryOptions;
@@ -77,6 +79,22 @@ public class Student {
 		this.email = email;
 	}
 	
+	public Long getFreePasses() {
+		return freePasses;
+	}
+
+	public void setFreePasses(Long freePasses) {
+		this.freePasses = freePasses;
+	}
+
+	public Long getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(Long postalCode) {
+		this.postalCode = postalCode;
+	}
+
 	public List<String> getOtherProgrammingLanguages() {
 		return this.otherProgrammingLanguages;
 	}

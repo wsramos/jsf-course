@@ -33,12 +33,29 @@
 								 value="#{student.email}" 
 								 label="Email" 
 								 required="true"
-								 requiredMessage="Your Email is mandatory."/>
+								 requiredMessage="Your Email is mandatory.">
+								 </h:inputText>
 			<h:messages for="email" styleClass="error"/>
+			<br/><br/>
+			Free Passes: <h:inputText id="freePasses" 
+								 value="#{student.freePasses}" 
+								 label="Free Passes" 
+								 >
+							<f:validateLongRange minimum="0" maximum="10"/>
+						 </h:inputText>
+			<h:messages for="freePasses" styleClass="error"/>
 			<br/><br/>
 			Country: <h:selectOneMenu value="#{student.country}">
 				<f:selectItems value="#{student.countryOptions}"/>
 			</h:selectOneMenu>
+			<br/><br/>
+			Postal Code: <h:inputText id="postalCode" 
+								 value="#{student.postalCode}" 
+								 label="Postal Code" 
+								 >
+							<f:validateLength minimum="5" maximum="8"/>
+						 </h:inputText>
+			<h:messages for="postalCode" styleClass="error"/>
 			<br/><br/>
 			Your Favorite Programming Language:
 			<h:selectOneRadio value="#{student.favoriteProgrammingLanguage}"> 
