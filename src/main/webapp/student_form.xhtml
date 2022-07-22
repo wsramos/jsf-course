@@ -15,12 +15,14 @@
     FORM STUDENT
     <br/><br/>
 		<h:form target="_blank">
-			<h:messages styleClass="error"/>
 			First Name: <h:inputText id="firstName" value="#{student.firstName}" label="First Name" required="true"/>
+			<h:messages for="firstName" styleClass="error"/>
 			<br/><br/>
 			Last Name: <h:inputText id="lastName" value="#{student.lastName}" label="Last Name" required="true"/>
+			<h:messages for="lastName" styleClass="error"/>
 			<br/><br/>
 			E-mail: <h:inputText id="email" value="#{student.email}" label="Email" required="true"/>
+			<h:messages for="email" styleClass="error"/>
 			<br/><br/>
 			Country: <h:selectOneMenu value="#{student.country}">
 				<f:selectItems value="#{student.countryOptions}"/>
