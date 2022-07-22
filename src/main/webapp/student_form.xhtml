@@ -15,13 +15,25 @@
     FORM STUDENT
     <br/><br/>
 		<h:form target="_blank">
-			First Name: <h:inputText id="firstName" value="#{student.firstName}" label="First Name" required="true"/>
+			First Name: <h:inputText id="firstName" 
+									 value="#{student.firstName}" 
+									 label="First Name" 
+									 required="true"
+									 requiredMessage="Your First Name is mandatory."/>
 			<h:messages for="firstName" styleClass="error"/>
 			<br/><br/>
-			Last Name: <h:inputText id="lastName" value="#{student.lastName}" label="Last Name" required="true"/>
+			Last Name: <h:inputText id="lastName" 
+									value="#{student.lastName}" 
+									label="Last Name" 
+									required="true"
+									requiredMessage="Your Last Name is mandatory."/>
 			<h:messages for="lastName" styleClass="error"/>
 			<br/><br/>
-			E-mail: <h:inputText id="email" value="#{student.email}" label="Email" required="true"/>
+			E-mail: <h:inputText id="email" 
+								 value="#{student.email}" 
+								 label="Email" 
+								 required="true"
+								 requiredMessage="Your Email is mandatory."/>
 			<h:messages for="email" styleClass="error"/>
 			<br/><br/>
 			Country: <h:selectOneMenu value="#{student.country}">
@@ -38,7 +50,7 @@
 				<f:selectItems value="#{student.programmingLanguageOptions}"/>
 			</h:selectManyCheckbox>
 			<br/>
-			<h:commandButton value="Submit" action="student_confirmation" />
+			<h:commandButton value="Submit" action="student_confirmation"/>
 		</h:form>
     </h:body>
 </html>
