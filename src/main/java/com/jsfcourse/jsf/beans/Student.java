@@ -12,6 +12,7 @@ public class Student {
 	private String lastName;
 	private String country;
 	private String favoriteProgrammingLanguage;
+	private String email;
 	//private String otherProgrammingLanguages;
 	
 	List<String> countryOptions;
@@ -68,6 +69,13 @@ public class Student {
 		this.favoriteProgrammingLanguage = favoriteProgrammingLanguage;
 	}
 	
+	public String getEmail() {
+		return this.email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	
 	public List<String> getOtherProgrammingLanguages() {
 		return this.otherProgrammingLanguages;

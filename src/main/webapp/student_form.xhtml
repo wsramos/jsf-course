@@ -6,15 +6,21 @@
     
     <h:head>
         <title>Student - Input Form</title>
+        <style>
+			.error {color:red}
+		</style>
     </h:head>
     
     <h:body>
     FORM STUDENT
     <br/><br/>
 		<h:form target="_blank">
-			First Name: <h:inputText id="firstName" value="#{student.firstName}"/>
+			<h:messages styleClass="error"/>
+			First Name: <h:inputText id="firstName" value="#{student.firstName}" label="First Name" required="true"/>
 			<br/><br/>
-			Last Name: <h:inputText id="lastName" value="#{student.lastName}"/>
+			Last Name: <h:inputText id="lastName" value="#{student.lastName}" label="Last Name" required="true"/>
+			<br/><br/>
+			E-mail: <h:inputText id="email" value="#{student.email}" label="Email" required="true"/>
 			<br/><br/>
 			Country: <h:selectOneMenu value="#{student.country}">
 				<f:selectItems value="#{student.countryOptions}"/>
